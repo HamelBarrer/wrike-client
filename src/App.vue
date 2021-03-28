@@ -1,30 +1,56 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="main-content">
+    <navbar />
+    <sidenav />
+    <main class="main">
+      <div class="container">
+        <router-view />
+      </div>
+    </main>
   </div>
-  <router-view/>
 </template>
 
+<script>
+  import Navbar from './components/layout/Navbar.vue';
+  import Sidenav from './components/layout/Sidenav.vue';
+  export default {
+    components: { Navbar, Sidenav },
+  };
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-#nav {
-  padding: 30px;
-}
+  a {
+    text-decoration: none;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  li {
+    list-style: none;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+
+  .main-content {
+    display: grid;
+    grid-template-areas:
+      'header header'
+      'sidenav main'
+      'sidenav main';
+    grid-template-rows: 3rem 1fr 2rem;
+    grid-template-columns: 12rem 1fr;
+    height: 100vh;
+  }
+
+  .main {
+    grid-area: main;
+    background-color: #f1eee1;
+  }
 </style>
