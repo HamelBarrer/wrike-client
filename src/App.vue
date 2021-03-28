@@ -38,6 +38,17 @@
     margin: auto;
   }
 
+  .card {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 4px 4px 3px rgba(75, 102, 171, 0.2);
+    border-radius: 1rem;
+  }
+
   .main-content {
     display: grid;
     grid-template-areas:
@@ -51,6 +62,6 @@
 
   .main {
     grid-area: main;
-    background-color: #f1eee1;
+    background-color: #f9fbfd;
   }
 </style>
