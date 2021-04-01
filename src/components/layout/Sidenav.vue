@@ -5,7 +5,7 @@
         <router-link to="/">Inico</router-link>
       </li>
       <li class="sidenav__item--list">
-        <router-link to="/">Reportes</router-link>
+        <router-link to="/reportes">Reportes</router-link>
       </li>
     </ul>
   </aside>
