@@ -18,7 +18,7 @@
 
       fetch(`http://localhost:8000/api/v1/list_report`, {
         headers: {
-          Authorization: 'Token e9f52054cd3d9cca3d8cc60115acfdd7934c663a',
+          Authorization: `Token ${localStorage.getItem('token')}`,
         },
       })
         .then((response) => response.json())

@@ -7,6 +7,9 @@
       <li class="sidenav__item--list">
         <router-link to="/reportes">Reportes</router-link>
       </li>
+      <li class="sidenav__item--list">
+        <router-link to="/login">Iniciar Sesion</router-link>
+      </li>
     </ul>
   </aside>
 </template>

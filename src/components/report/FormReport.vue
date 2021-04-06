@@ -13,20 +13,48 @@
         <label for="">Descripcion:</label>
         <textarea v-model.trim="description"></textarea>
       </div>
+      <button type="submit">Enviar</button>
     </form>
   </div>
 </template>
 
 <script>
   import { ref } from '@vue/reactivity';
+  import { inject } from '@vue/runtime-core';
   export default {
     setup() {
       const title = ref('');
       const matter = ref('');
       const description = ref('');
+      const reports = inject('reports');
 
       const createReport = () => {
-        console.log('casi');
+        if (
+          title.value === '' ||
+          matter.value === '' ||
+          description.value === ''
+        ) {
+          console.log('datos incompletos');
+          return;
+        }
+
+        fetch(`http://localhost:8000/api/v1/create_report`, {
+          method: 'POST',
+          body: JSON.stringify({
+            title: title.value,
+            matter: matter.value,
+            description: description.value,
+          }),
+          headers: {
+            Authorization: `Token ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json',
+          },
+        })
+          .then((res) => res.json())
+          .catch((error) => console.log(error))
+          .then((response) => {
+            reports.value.push(response);
+          });
       };
 
       return {

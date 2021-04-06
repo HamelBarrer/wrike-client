@@ -11,10 +11,17 @@
 </template>
 
 <script>
+  import { ref } from '@vue/reactivity';
   import Navbar from './components/layout/Navbar.vue';
   import Sidenav from './components/layout/Sidenav.vue';
+  import { provide } from '@vue/runtime-core';
   export default {
     components: { Navbar, Sidenav },
+    setup() {
+      const reports = ref([]);
+
+      provide('reports', reports);
+    },
   };
 </script>
 
