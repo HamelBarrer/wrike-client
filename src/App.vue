@@ -47,6 +47,7 @@
 
   .card {
     display: flex;
+    flex-direction: column;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -64,7 +65,7 @@
       'sidenav main';
     grid-template-rows: 3rem 1fr 2rem;
     grid-template-columns: 12rem 1fr;
-    height: 100vh;
+    height: 100%;
   }
 
   .main {
