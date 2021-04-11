@@ -30,6 +30,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   a {
@@ -53,7 +56,11 @@
     justify-content: center;
     background-color: #fff;
     padding: 1rem;
-    box-shadow: 0 4px 4px 3px rgba(75, 102, 171, 0.2);
+    box-shadow: 0 32px 32px -10px rgb(112 105 103 / 9%),
+      0 16px 16px -10px rgb(112 105 103 / 7%),
+      0 8px 8px -10px rgb(112 105 103 / 4%),
+      0 4px 4px -10px rgb(112 105 103 / 2%),
+      0 2px 4px -10px rgb(112 105 103 / 1%);
     border-radius: 1rem;
   }
 
@@ -70,6 +77,6 @@
 
   .main {
     grid-area: main;
-    background-color: #f9fbfd;
+    background-color: #fafaf8;
   }
 </style>

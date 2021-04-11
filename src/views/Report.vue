@@ -1,18 +1,16 @@
 <template>
+  <h2 class="title">Crear Reporte</h2>
   <form-report />
-  <list-report />
-  <h2>tablas</h2>
   <carrousel-report />
 </template>
 
 <script>
   import { ref } from '@vue/reactivity';
   import FormReport from '../components/report/FormReport.vue';
-  import ListReport from '../components/report/ListReport.vue';
   import { provide } from '@vue/runtime-core';
   import CarrouselReport from '../components/report/CarrouselReport.vue';
   export default {
-    components: { FormReport, ListReport, CarrouselReport },
+    components: { FormReport, CarrouselReport },
     setup() {
       const reports = ref([]);
 
@@ -31,4 +29,12 @@
   };
 </script>
 
-<style></style>
+<style scoped>
+  .title {
+    text-align: center;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #5d6163f2;
+  }
+</style>

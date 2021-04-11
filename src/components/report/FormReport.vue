@@ -2,18 +2,29 @@
   <div class="form-data">
     <form v-on:submit.prevent="createReport" autocomplete="off" class="form">
       <div class="form__elemt">
-        <label for="">Titulo:</label>
-        <input type="text" v-model.trim="title" />
+        <input
+          class="form__elemt-input"
+          type="text"
+          placeholder="Titulo del reporte"
+          v-model.trim="title"
+        />
       </div>
       <div class="form__elemt">
-        <label for="">Asunto:</label>
-        <input type="text" v-model.trim="matter" />
+        <input
+          class="form__elemt-input"
+          type="text"
+          placeholder="Asunto del reporte"
+          v-model.trim="matter"
+        />
       </div>
       <div class="form__elemt">
-        <label for="">Descripcion:</label>
-        <textarea v-model.trim="description"></textarea>
+        <textarea
+          class="form__elemt-input"
+          placeholder="Descripcion del reporte"
+          v-model.trim="description"
+        ></textarea>
       </div>
-      <button type="submit">Enviar</button>
+      <button class="form__send" type="submit">Enviar</button>
     </form>
   </div>
 </template>
@@ -69,15 +80,46 @@
 
 <style scoped>
   .form-data {
-    margin-top: 2rem;
+    margin: 2rem auto;
     background-color: #fff;
     padding: 1rem;
-    box-shadow: 1px 1px 6px 1px red;
+    width: 50%;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 6px 1px #8e9aa5;
   }
 
   .form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .form__elemt {
+    padding: 0.5rem 0;
+  }
+
+  .form__elemt-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 0.15rem solid #909ba5;
+    border-radius: 1rem;
+    outline: none;
+    color: #5c5656;
+    text-align: center;
+  }
+
+  .form__elemt-input::placeholder {
+    color: #000;
+  }
+
+  .form__send {
+    padding: 0.5rem;
+    background-color: rgb(114, 165, 114);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
   }
 </style>

@@ -21,10 +21,13 @@
   .header {
     grid-area: header;
     display: flex;
+    position: fixed;
+    width: 100%;
+    height: 3rem;
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem;
-    z-index: 100;
+    background-color: #fff;
   }
 
   .header__logo {
