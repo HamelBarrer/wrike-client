@@ -10,6 +10,9 @@
       <li class="sidenav__item--list">
         <router-link to="/login">Iniciar Sesion</router-link>
       </li>
+      <li class="sidenav__item--list">
+        <router-link to="/proyectos">Proyectos</router-link>
+      </li>
     </ul>
   </aside>
 </template>
@@ -39,8 +42,8 @@
   }
 
   .sidenav__item--list:hover {
-    background-color: white;
-    border-left: 5px solid red;
+    background-color: #4e4d4d;
+    border-left: 5px solid #fff;
   }
 
   .sidenav__item--list > a {
