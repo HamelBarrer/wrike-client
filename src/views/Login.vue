@@ -23,10 +23,10 @@
       const username = ref('');
       const password = ref('');
 
-      const token = '';
+      const token = ref('');
 
       const sendData = () => {
-        fetch(`http://localhost:8000/auth-token/`, {
+        fetch(`https://wrikke.herokuapp.com/auth-token/`, {
           method: 'POST',
           body: JSON.stringify({
             username: username.value,
@@ -39,6 +39,7 @@
           .then((res) => res.json())
           .catch((error) => console.error('Error:', error))
           .then((response) => {
+            console.log(response.t);
             token.value = response.token;
           });
       };

@@ -43,6 +43,13 @@
           v-model.trim="end_date"
         />
       </div>
+      <h2>Crear Tareas</h2>
+      <div class="form__new">
+        <div class="form__elemt">
+          <input type="text" placeholder="Tarea" class="form__elemt-input" />
+        </div>
+        <button class="form__send">agregar nuevo</button>
+      </div>
       <button class="form__send" type="submit">Enviar</button>
     </form>
   </div>
@@ -61,7 +68,7 @@
       const reports = inject('reports');
       const developers = ref([]);
 
-      fetch(`http://localhost:8000/api/v1/list_user`, {
+      fetch(`https://wrikke.herokuapp.com/api/v1/list_user`, {
         method: 'GET',
         headers: {
           Authorization: `Token ${localStorage.getItem('token')}`,
@@ -84,7 +91,7 @@
           return;
         }
 
-        fetch(`http://localhost:8000/api/v1/create_project`, {
+        fetch(`https://wrikke.herokuapp.com/api/v1/create_project`, {
           method: 'POST',
           body: JSON.stringify({
             developer: developer.value,
@@ -162,5 +169,11 @@
     outline: none;
     border: none;
     border-radius: 1rem;
+  }
+
+  .form__new {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
   }
 </style>

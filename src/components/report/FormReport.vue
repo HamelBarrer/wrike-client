@@ -49,7 +49,7 @@
           return;
         }
 
-        fetch(`http://localhost:8000/api/v1/create_report`, {
+        fetch(`https://wrikke.herokuapp.com/api/v1/create_report`, {
           method: 'POST',
           body: JSON.stringify({
             title: title.value,

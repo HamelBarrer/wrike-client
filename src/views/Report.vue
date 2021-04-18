@@ -14,7 +14,7 @@
     setup() {
       const reports = ref([]);
 
-      fetch(`http://localhost:8000/api/v1/list_report`, {
+      fetch(`https://wrikke.herokuapp.com/api/v1/list_report`, {
         headers: {
           Authorization: `Token ${localStorage.getItem('token')}`,
         },
